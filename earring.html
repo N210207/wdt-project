@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earrings Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #000000;
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            color: #6c5b7b;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .navbar-nav .nav-link {
+            color: #ecf0f1 !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #6c5b7b !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://img.freepik.com/premium-photo/discover-beauty-modern-jewelry-with-premium-background-generative-ai_753390-1435.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #f0f0f0;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #eee3e5;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .hero .btn-primary {
+            background-color: #6c5b7b;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .hero .btn-primary:hover {
+            background-color: #c99ca0;
+        }
+
+        /* Price Range Filter */
+        .price-range {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        .price-range h3 {
+            font-size: 24px;
+            color: #6c5b7b;
+        }
+        .price-range .range-input {
+            width: 100%;
+        }
+
+        /* Product Section */
+        .catalog {
+            padding: 50px 20px;
+            text-align: center;
+            animation: slideIn 2s ease-out;
+        }
+        .catalog h2 {
+            font-size: 36px;
+            color: #000000;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .product-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #000000;
+        }
+        .product-card .card-text {
+            font-size: 18px;
+            color: #e74c3c;
+        }
+        .product-card .btn-info {
+            background-color: #000000;
+            border-radius: 25px;
+            padding: 10px 30px;
+            color: white;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .product-card .btn-info:hover {
+            background-color: #c99ca0;
+        }
+        .product-card .btn-secondary {
+            background-color: #000000;
+            border-radius: 25px;
+            padding: 10px 30px;
+            color: white;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .product-card .btn-secondary:hover {
+            background-color: #000000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">EarringsShop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Elegance in Every Pair</h1>
+        <a href="#catalog" class="btn btn-primary">Browse Collection</a>
+    </div>
+
+    <!-- Price Range Filter -->
+    <div class="container price-range">
+        <h3>Filter by Price</h3>
+        <input type="range" min="0" max="500" value="100" class="range-input" id="priceRange" oninput="updatePriceRange()">
+        <p>Price: $<span id="priceValue">100</span></p>
+    </div>
+
+    <!-- Product Catalog -->
+    <div class="container catalog" id="catalog">
+        <h2>Our Latest Earrings</h2>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5VUBRzXN2L_NUbDvRYn1MudEs58hNYO5jIN9LkUwp4nuodsAq8dR0WjhVmxuhLPuLiA4&usqp=CAU" alt="Earrings 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Gold Drop Earrings</h5>
+                        <p class="card-text">₹12,000.00</p>
+                        <a href="./buynow.html" class="btn btn-info">Buy Now</a>
+                        <a href="#" class="btn btn-secondary">Add to Cart</a> 
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="data:image/jpeg;base64,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" alt="Earrings 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Sapphire Huggie Earrings</h5>
+                        <p class="card-text">₹9,500</p>
+                        <a href="./buynow.html" class="btn btn-info">Buy Now</a>
+                        <a href="#" class="btn btn-secondary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbzq1C4VDd-Ta6UFsUW-7k-LENBoPEF3Z7PA&s" alt="Earrings 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Diamond Stud Earrings</h5>
+                        <p class="card-text">₹25,000</p>
+                        <a href="./buynow.html" class="btn btn-info">Buy Now</a>
+                        <a href="#" class="btn btn-secondary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EarringsShop. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        function updatePriceRange() {
+            let price = document.getElementById('priceRange').value;
+            document.getElementById('priceValue').textContent = price;
+        }
+    </script>
+
+</body>
+</html>
